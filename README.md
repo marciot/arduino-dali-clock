@@ -1,4 +1,4 @@
-[![Dali Clock Demonstration](https://github.com/marciot/arduino-dali-clock/raw/master/artwork/youtube.jpg)](https://www.youtube.com/watch?v=sAwiu89En18)
+[![Dali Clock Demonstration](https://github.com/marciot/arduino-dali-clock/raw/master/artwork/youtube.png)](https://www.youtube.com/watch?v=sAwiu89En18)
 
 arduino-dali-clock
 ==================
@@ -16,7 +16,6 @@ This program is intended for use with a [FT810CB-HY50HD] 800x480 graphical touch
 
 For more information on assembling this clock, see my [Instructable].
 
-[logo]: https://github.com/marciot/arduino-dali-clock/raw/master/artwork/youtube.jpg "A dome screenshot"
 [xdaliclock]: https://www.jwz.org/xdaliclock
 [FT810CB-HY50HD]: https://www.hotmcu.com/5-graphical-lcd-touchscreen-800x480-spi-ft810-p-286.html
 [Instructable]: https://www.instructables.com/id/80s-Style-Melting-Digital-Dali-Clock
