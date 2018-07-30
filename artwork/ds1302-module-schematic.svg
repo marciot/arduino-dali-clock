@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.2"
+   x="0in"
+   y="0in"
+   width="99"
+   height="90"
+   viewBox="0 0 27.94 25.4"
+   id="svg2"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="ds1302-module-schematic.svg">
+  <metadata
+     id="metadata74">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs72" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1110"
+     inkscape:window-height="684"
+     id="namedview70"
+     showgrid="false"
+     inkscape:zoom="2.6222222"
+     inkscape:cx="88.867006"
+     inkscape:cy="38.129159"
+     inkscape:window-x="1379"
+     inkscape:window-y="41"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="schematic"
+     inkscape:document-units="px"
+     units="px" />
+  <g
+     id="schematic">
+    <rect
+       class="interior rect"
+       x="5.23875"
+       y="5.23875"
+       width="17.4625"
+       height="14.9225"
+       id="rect5"
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.3175;stroke-linecap:round" />
+    <line
+       class="pin"
+       x1="22.7365"
+       y1="10.16"
+       x2="27.8165"
+       y2="10.16"
+       id="connector4pin"
+       style="fill:none;stroke:#787878;stroke-width:0.246944;stroke-linecap:round" />
+    <text
+       class="text"
+       font-size="0.881944"
+       x="25.276501"
+       y="9.7895803"
+       id="text8"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:0.88194448;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans, Normal';text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0"
+       sodipodi:linespacing="125%">3</text>
+    <text
+       class="text"
+       font-size="1.23472"
+       x="22.242599"
+       y="10.4069"
+       id="text10"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.41111112;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans, Normal';text-align:end;writing-mode:lr-tb;text-anchor:end;fill:#8c8c8c;stroke:none;stroke-width:0"
+       sodipodi:linespacing="125%">CLK</text>
+    <rect
+       class="terminal"
+       x="27.8165"
+       y="10.0365"
+       width="0.246944"
+       height="0.246944"
+       id="connector4terminal"
+       style="fill:none;stroke:none;stroke-width:0" />
+    <line
+       class="pin"
+       x1="22.7365"
+       y1="12.7"
+       x2="27.8165"
+       y2="12.7"
+       id="connector3pin"
+       style="fill:none;stroke:#787878;stroke-width:0.246944;stroke-linecap:round" />
+    <text
+       class="text"
+       font-size="0.881944"
+       x="25.276501"
+       y="12.3296"
+       id="text14"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:0.88194448;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans, Normal';text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0"
+       sodipodi:linespacing="125%">4</text>
+    <text
+       class="text"
+       font-size="1.23472"
+       x="22.242599"
+       y="12.9469"
+       id="text16"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.41111112;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans, Normal';text-align:end;writing-mode:lr-tb;text-anchor:end;fill:#8c8c8c;stroke:none;stroke-width:0"
+       sodipodi:linespacing="125%">DAT</text>
+    <rect
+       class="terminal"
+       x="27.8165"
+       y="12.5765"
+       width="0.246944"
+       height="0.246944"
+       id="connector3terminal"
+       style="fill:none;stroke:none;stroke-width:0" />
+    <line
+       class="pin"
+       x1="22.7365"
+       y1="15.24"
+       x2="27.8165"
+       y2="15.24"
+       id="connector2pin"
+       style="fill:none;stroke:#787878;stroke-width:0.246944;stroke-linecap:round" />
+    <text
+       class="text"
+       font-size="0.881944"
+       x="25.276501"
+       y="14.8696"
+       id="text20"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:0.88194448;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans, Normal';text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0"
+       sodipodi:linespacing="125%">5</text>
+    <text
+       class="text"
+       font-size="1.23472"
+       x="22.242599"
+       y="15.4869"
+       id="text22"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.41111112;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans, Normal';text-align:end;writing-mode:lr-tb;text-anchor:end;fill:#8c8c8c;stroke:none;stroke-width:0"
+       sodipodi:linespacing="125%">RST</text>
+    <rect
+       class="terminal"
+       x="27.8165"
+       y="15.1165"
+       width="0.246944"
+       height="0.246944"
+       id="connector2terminal"
+       style="fill:none;stroke:none;stroke-width:0" />
+    <line
+       class="pin"
+       x1="12.7"
+       y1="20.196501"
+       x2="12.7"
+       y2="25.276501"
+       id="connector6pin"
+       style="fill:none;stroke:#787878;stroke-width:0.246944;stroke-linecap:round" />
+    <g
+       transform="matrix(0,1,-1,0,12.01545,23.060985)"
+       id="g38">
+      <g
+         transform="matrix(0,-1,1,0,0,0)"
+         id="g40">
+        <text
+           class="text"
+           font-size="0.881944"
+           x="0"
+           y="0"
+           id="text42"
+           style="font-size:0.881944;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0">
+          <tspan
+             style="font-size:0.88194448px"
+             id="tspan3369">2</tspan>
+        </text>
+      </g>
+    </g>
+    <rect
+       class="terminal"
+       x="12.5765"
+       y="25.276501"
+       width="0.246944"
+       height="0.246944"
+       id="connector6terminal"
+       style="fill:none;stroke:none;stroke-width:0" />
+    <line
+       class="pin"
+       x1="12.7"
+       y1="0.123472"
+       x2="12.7"
+       y2="5.2034702"
+       id="connector5pin"
+       style="fill:none;stroke:#787878;stroke-width:0.246944;stroke-linecap:round" />
+    <g
+       transform="matrix(0,1,-1,0,12.066266,3.0297267)"
+       id="g52">
+      <g
+         transform="matrix(0,-1,1,0,0,0)"
+         id="g54">
+        <text
+           class="text"
+           font-size="0.881944"
+           x="0"
+           y="0"
+           id="text56"
+           style="font-size:0.881944;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0">
+          <tspan
+             style="font-size:0.88194448px"
+             id="tspan3371">1</tspan>
+        </text>
+      </g>
+    </g>
+    <rect
+       class="terminal"
+       x="12.5765"
+       y="-0.123472"
+       width="0.246944"
+       height="0.246944"
+       id="connector5terminal"
+       style="fill:none;stroke:none;stroke-width:0" />
+    <text
+       class="text"
+       id="label"
+       font-size="1.49931"
+       x="12.837275"
+       y="10.567427"
+       style="font-size:1.76388903;font-family:'Droid Sans';text-anchor:middle;fill:#000000;stroke:none;stroke-width:0;">DS1302</text>
+    <text
+       class="text"
+       id="text66"
+       font-size="1.49931"
+       x="12.729648"
+       y="12.846925"
+       style="font-size:2.11666679;font-family:'Droid Sans';text-anchor:middle;fill:#000000;stroke:none;stroke-width:0">
+      <tspan
+         style="font-size:1.76388903px"
+         id="tspan3372">RTC</tspan>
+    </text>
+    <text
+       class="text"
+       id="text68"
+       font-size="1.49931"
+       x="12.729648"
+       y="15.165179"
+       style="font-size:2.11666679;font-family:'Droid Sans';text-anchor:middle;fill:#000000;stroke:none;stroke-width:0">Module</text>
+    <text
+       class="text"
+       font-size="1.23472"
+       x="14.161002"
+       y="6.7445273"
+       id="text10-3"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.41111112;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans, Normal';text-align:end;writing-mode:lr-tb;text-anchor:end;fill:#8c8c8c;stroke:none;stroke-width:0"
+       sodipodi:linespacing="125%">VCC</text>
+    <text
+       class="text"
+       font-size="1.23472"
+       x="14.182425"
+       y="19.252562"
+       id="text10-3-5"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.41111112;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans, Normal';text-align:end;writing-mode:lr-tb;text-anchor:end;fill:#8c8c8c;stroke:none;stroke-width:0"
+       sodipodi:linespacing="125%">GND</text>
+  </g>
+</svg>
