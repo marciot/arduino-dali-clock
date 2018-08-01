@@ -216,6 +216,8 @@ class CommandProcessor : public CLCD::CommandFifo {
                                                                   {CLCD::CommandFifo::memcpy(src, dst, size); return *this;}
     inline CommandProcessor& memcrc   (uint32_t ptr, uint32_t num, uint32_t result)
                                                                   {CLCD::CommandFifo::memcrc(ptr, num, result); return *this;}
+    inline CommandProcessor& memwrite (uint32_t ptr, uint32_t value)
+                                                                  {CLCD::CommandFifo::memwrite(ptr, value); return *this;}
     inline CommandProcessor& inflate  (uint32_t ptr)
                                                                   {CLCD::CommandFifo::inflate(ptr); return *this;}
     inline CommandProcessor& getptr   (uint32_t result)

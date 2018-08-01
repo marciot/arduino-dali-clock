@@ -20,6 +20,8 @@
 
 class DaliClock {
   private:
+    static const uint32_t shadow_color;
+    
     bool     calendar_requested;
     uint8_t  calendar_blend;
     uint32_t calendar_entry_ms;
@@ -44,7 +46,7 @@ class DaliClock {
     
     void animate_calendar_mode(float seconds);
   public:
-    static void fill_gradient(uint32_t top_color, uint32_t bottom_color);
+    static void gradient_colors(uint32_t top_color, uint32_t bottom_color);
     
     static void     ms_to_hms(uint32_t ms, uint8_t &hours, uint8_t &minutes, float &seconds);
     static uint32_t hms_to_ms(uint8_t hours, uint8_t minutes, float seconds);

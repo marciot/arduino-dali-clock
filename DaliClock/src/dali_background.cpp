@@ -21,7 +21,7 @@
 #include "dali_memory_map.h"
 #include "dali_background.h"
 
-void DaliGrid::fill_gradient(uint32_t top_color, uint32_t bottom_color) {
+void DaliGrid::gradient_colors(uint32_t top_color, uint32_t bottom_color) {
   CommandProcessor cmd;
   cmd.cmd(CMD_DLSTART)
      .cmd(CLEAR(true,true,true))
@@ -36,19 +36,20 @@ void DaliGrid::draw(uint8_t line_width, float motion) {
   CommandProcessor cmd;
   cmd.cmd(SAVE_CONTEXT())
      .cmd(COLOR_RGB(0xFFFFFF))
+     .cmd(VERTEX_FORMAT(0))
      .cmd(LINE_WIDTH(line_width*16))
      .cmd(BEGIN(LINES));
   
   for(uint16_t y = 2; ; y++) {
     uint16_t py = pow(2, motion + y);
     if(py > Vsize/2) break;
-    cmd.cmd(VERTEX2F(0,       (Vsize/2 + py)*16))
-       .cmd(VERTEX2F(Hsize*16,(Vsize/2 + py)*16));
+    cmd.cmd(VERTEX2F(0,    (Vsize/2 + py)))
+       .cmd(VERTEX2F(Hsize,(Vsize/2 + py)));
   }
   
   for(int16_t x = -int16_t(Hsize); x < int16_t(Hsize); x += 200) {
-    cmd.cmd(VERTEX2F((Hsize/2+x/2)*16, (Vsize/2+line_width)*16))
-       .cmd(VERTEX2F((Hsize/2+x  )*16, (Vsize  )*16));
+    cmd.cmd(VERTEX2F((Hsize/2+x/2), (Vsize/2+line_width)))
+       .cmd(VERTEX2F((Hsize/2+x  ), (Vsize  )));
   }
   
   // Draw the gradient
@@ -61,7 +62,7 @@ void DaliGrid::draw(uint8_t line_width, float motion) {
      .cmd(RESTORE_CONTEXT());
 }
 
-void DaliShine::fill_gradient(uint32_t color) {
+void DaliShine::gradient_colors(uint32_t color) {
   CommandProcessor cmd;
   cmd.cmd(CMD_DLSTART)
      .cmd(CLEAR(true,true,true))
@@ -79,20 +80,23 @@ void DaliShine::draw(float motion) {
   constexpr uint16_t shine_length = (Vsize + shine_gradient_height) * 1.4142;
   // Draw the gradient
   CommandProcessor cmd;
-  cmd.cmd(BLEND_FUNC(BLEND_FUNC_DST_ALPHA, BLEND_FUNC_ONE))
-     .loadidentity()
-     .rotate(45ul * 0xFFFF / 360)
-     .setmatrix()
-     .cmd(BITMAP_SOURCE(shine_gradient_addr))
-     .cmd(BITMAP_LAYOUT  (RGB565,2, shine_gradient_height))
-     .cmd(BITMAP_SIZE(NEAREST, REPEAT, BORDER, Vsize+2*shine_gradient_height, Vsize+2*shine_gradient_height))
-     .cmd(BEGIN(BITMAPS))
-     .cmd(VERTEX2F(((Hsize+Vsize) * motion - Vsize)*16, -2*shine_gradient_height*16))
-     .loadidentity()
-     .setmatrix();
+  cmd.cmd(SAVE_CONTEXT())
+       .cmd(BLEND_FUNC(BLEND_FUNC_DST_ALPHA, BLEND_FUNC_ONE))
+       .cmd(SCISSOR_XY(0,0))
+       .cmd(SCISSOR_SIZE(Hsize,Vsize))
+       .cmd(VERTEX_FORMAT(4))
+       .loadidentity()
+       .rotate(45ul * 0xFFFF / 360)
+       .setmatrix()
+       .cmd(BITMAP_SOURCE(shine_gradient_addr))
+       .cmd(BITMAP_LAYOUT  (RGB565,2, shine_gradient_height))
+       .bitmap_size(NEAREST, REPEAT, BORDER, Vsize+2*shine_gradient_height, Vsize+2*shine_gradient_height)
+       .cmd(BEGIN(BITMAPS))
+       .cmd(VERTEX2F(((Hsize+Vsize) * motion - Vsize)*16, -2*shine_gradient_height*16))
+     .cmd(RESTORE_CONTEXT());
 }
 
-void DaliStarburst::fill_gradient(uint32_t color) {
+void DaliStarburst::gradient_colors(uint32_t color) {
   const float hw = starburst_gradient_width/2;
   const float hh = starburst_gradient_height/2;
   const float aa   = hw*hw + hh*hh;

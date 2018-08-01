@@ -20,19 +20,19 @@
 
 class DaliGrid {
   public:
-    static void fill_gradient(uint32_t top_color, uint32_t bottom_color);
+    static void gradient_colors(uint32_t top_color, uint32_t bottom_color);
     static void draw(uint8_t line_width, float motion);
 };
 
 class DaliShine {
   public:
-    static void fill_gradient(uint32_t color);
+    static void gradient_colors(uint32_t color);
     static void draw(float motion);  
 };
 
 class DaliStarburst {
   public:
-    static void fill_gradient(uint32_t color);
+    static void gradient_colors(uint32_t color);
     static void draw(uint32_t x, uint32_t y, float motion);  
 };
 

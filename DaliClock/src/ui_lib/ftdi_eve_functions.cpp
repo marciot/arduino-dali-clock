@@ -51,7 +51,6 @@ uint8_t CLCD::get_brightness() {
 }
 
 void CLCD::turn_on_backlight (void) {
-  mem_write_16(REG_PWM_HZ,  0x00FA);
   mem_write_8(REG_PWM_DUTY, 128);
 }
 
@@ -546,6 +545,21 @@ void CLCD::CommandFifo::memcrc (uint32_t ptr, uint32_t num, uint32_t result) {
   cmd( &cmd_data, sizeof(cmd_data) );
 }
 
+void CLCD::CommandFifo::memwrite (uint32_t ptr, uint32_t value) {
+  struct {
+    uint32_t  type = CMD_MEMWRITE;
+    uint32_t  ptr;
+    uint32_t  num;
+    uint32_t  value;
+  } cmd_data;
+
+  cmd_data.ptr    = ptr;
+  cmd_data.num    = 4;
+  cmd_data.value  = value;
+
+  cmd( &cmd_data, sizeof(cmd_data) );
+}
+
 void CLCD::CommandFifo::append (uint32_t ptr, uint32_t size) {
   struct {
     uint32_t  type = CMD_APPEND;
@@ -1033,6 +1047,8 @@ void CLCD::init (void) {
   }
 
   mem_write_8(REG_PCLK, Pclk); // Turns on Clock by setting PCLK Register to the value necessary for the module
+  
+  mem_write_16(REG_PWM_HZ,  0x00FA);
 
   // Initialize the command FIFO
   CommandFifo::reset();

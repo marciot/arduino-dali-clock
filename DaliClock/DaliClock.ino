@@ -20,6 +20,8 @@
 #include "src/dali_clock.h"
 #include "src/dali_background.h"
 
+const uint32_t DaliClock::shadow_color = 0x0044FF;
+
 DaliGrid       grid;
 DaliClock      clock;
 DaliShine      shine;
@@ -43,15 +45,27 @@ SCREEN_TABLE_POST
 /***************************** CLOCK SCREEN *****************************/
 
 void ClockScreen::onEntry() {
-  CLCD::turn_on_backlight();
+  // Draw and capture gradient bitmaps
+  clock.gradient_colors(0xFF0000, 0x0000FF);
+  grid.gradient_colors(0x000000, 0xFF8800);
+  shine.gradient_colors(0x7F7F7F);
 
-  clock.fill_gradient(0xFF0000, 0x0000FF);
-  grid.fill_gradient(0x000000, 0xFF8800);
-  shine.fill_gradient(0x7F7F7F);
+  // Clear the screen before turning on backlight to avoid flickering.
+  CommandProcessor cmd;
+  cmd.cmd(CMD_DLSTART)
+     .cmd(CLEAR_COLOR_RGB(0))
+     .cmd(CLEAR(true,true,true))
+     .cmd(DL::DL_DISPLAY)
+     .cmd(CMD_SWAP)
+     .execute();
+  delay(100);
   
+  // Load the time from the real-time clock
   clock.sync_from_rtc();
-
-  CLCD::turn_on_backlight();
+  
+  // Turn on the backlight
+  cmd.memwrite(REG_PWM_DUTY, 128).execute();
+  
   UIScreen::onEntry();
 }
 
@@ -59,14 +73,18 @@ void ClockScreen::onRedraw(draw_mode_t what) {
   CommandProcessor cmd;
   cmd.cmd(CLEAR_COLOR_RGB(0x000000))
      .cmd(CLEAR(true,true,true));
-  
+
   const uint32_t ms = millis();
   const float period_1s   = float(ms %  1000)  / 1000;
   const float period_3s   = float(ms %   3000) / 1000;
-  
-  grid.draw (4, period_1s);
-  clock.draw(10, 160, Hsize, Vsize - 20);
-  
+
+  grid.draw (0.008 * Vsize, period_1s);
+
+  constexpr uint16_t margin = float(Hsize)*0.0125;
+  constexpr uint16_t    top = float(Vsize)*0.333;
+
+  clock.draw(margin, top, Hsize - margin*2, Vsize - top);
+
   if(period_3s < 1) shine.draw(period_3s);
 }
 
@@ -82,7 +100,7 @@ bool ClockScreen::onTouchStart(uint8_t tag) {
       return true;
     case 9:
       clock.set_calender_mode(true);
-      return true;  
+      return true;
   }
 }
 
@@ -98,7 +116,7 @@ bool ClockScreen::onTouchEnd(uint8_t tag) {
       return true;
     case 9:
       clock.set_calender_mode(false);
-      return true;  
+      return true;
   }
 }
 

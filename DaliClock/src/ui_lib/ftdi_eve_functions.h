@@ -234,13 +234,14 @@ class CLCD::CommandFifo {
     void str (const char * const data);
     void str (progmem_str data);
 
-    void memzero (uint32_t ptr, uint32_t size);
-    void memset  (uint32_t ptr, uint32_t value, uint32_t size);
-    void memcpy  (uint32_t dst, uint32_t src, uint32_t size);
-    void memcrc  (uint32_t ptr, uint32_t num, uint32_t result);
-    void inflate (uint32_t ptr);
-    void getptr  (uint32_t result);
-    void append  (uint32_t ptr, uint32_t size);
+    void memzero  (uint32_t ptr, uint32_t size);
+    void memset   (uint32_t ptr, uint32_t value, uint32_t size);
+    void memcpy   (uint32_t dst, uint32_t src, uint32_t size);
+    void memcrc   (uint32_t ptr, uint32_t num, uint32_t result);
+    void memwrite (uint32_t ptr, uint32_t value);
+    void inflate  (uint32_t ptr);
+    void getptr   (uint32_t result);
+    void append   (uint32_t ptr, uint32_t size);
 };
 
 #endif // _FTDI_EVE_FUNCTIONS_H_

@@ -40,6 +40,7 @@ constexpr uint32_t starburst_gradient_addr   = shine_gradient_addr - starburst_g
 
 constexpr uint32_t digit_bits_linestride = DIGIT_INFO(eight).linestride;
 constexpr uint32_t digit_bits_height     = DIGIT_INFO(eight).height;
+constexpr uint32_t digit_bits_width      = DIGIT_INFO(eight).width;
 constexpr uint32_t digit_bits_size       = digit_bits_linestride * digit_bits_height;
 
 constexpr uint32_t digit6_bits_addr      = starburst_gradient_addr - digit_bits_size;
@@ -51,6 +52,7 @@ constexpr uint32_t digit1_bits_addr      = digit2_bits_addr - digit_bits_size;
 
 constexpr uint32_t separator_bits_linestride = DIGIT_INFO(colon).linestride;
 constexpr uint32_t separator_bits_height     = DIGIT_INFO(colon).height;
+constexpr uint32_t separator_bits_width      = DIGIT_INFO(colon).width;
 constexpr uint32_t separator_bits_size       = separator_bits_linestride * separator_bits_height;
 constexpr uint32_t separator_bits_addr       = digit1_bits_addr - separator_bits_size;
 
